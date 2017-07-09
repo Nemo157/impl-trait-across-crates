@@ -4,14 +4,14 @@ To reproduce:
 
 ```sh
 $ cd foo
-$ cargo build
+$ cargo +nightly-2017-07-08 build
    Compiling foo v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/foo)
 error: linking with `cc` failed: exit code: 1
   |
-  = note: "cc" "-m64" "-L" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/foo-e44b5c1f474d8218.0.o" "-o" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/foo-e44b5c1f474d8218" "-Wl,-dead_strip" "-nodefaultlibs" "-L" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps" "-L" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/libbar-5d1f8c94d5285ba5.rlib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/libfutures-82f759521b139a28.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libstd-a260b5db713b337f.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/librand-664091cbac310259.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcollections-4e19d5a43d7fdd2c.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libstd_unicode-49cd3c7af2b2f27f.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libpanic_unwind-18bf5d50673f1daa.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libunwind-6b24ec54aa474d14.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc-99e0cdfb2e11773a.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc_jemalloc-7b14c3e63843fe84.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liblibc-109501e572ed7296.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcore-f1125930d2c15bcd.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcompiler_builtins-594db3b2ae45efeb.rlib" "-l" "System" "-l" "pthread" "-l" "c" "-l" "m"
+  = note: "cc" "-m64" "-L" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/foo-509190d9c4c5257f.0.o" "-o" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/foo-509190d9c4c5257f" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/foo-509190d9c4c5257f.crate.allocator.o" "-Wl,-dead_strip" "-nodefaultlibs" "-L" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps" "-L" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/libbar-e44f74429dcb6ea1.rlib" "/Users/Nemo157/sources/impl-trait-across-crates/foo/target/debug/deps/libfutures-6ae93a2023d032bb.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libstd-44a947b098ab6362.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc_jemalloc-e0b819d1caefc46e.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc_system-c7b3dfd897c71657.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/librand-478ce98ecaec6d15.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libpanic_unwind-512815c9bc06f295.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libunwind-cd8cd76eb0a0bb43.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liblibc-b81a73784bc4a25a.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/liballoc-51aa53f169f1f37b.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libstd_unicode-b6c504ac776266c1.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcore-10cda230398f0728.rlib" "/Users/Nemo157/.rustup/toolchains/nightly-2017-07-08-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib/libcompiler_builtins-d115e8b221fa0ba7.rlib" "-l" "System" "-l" "resolv" "-l" "pthread" "-l" "c" "-l" "m"
   = note: Undefined symbols for architecture x86_64:
-            "bar::foo::_$u7b$$u7b$closure$u7d$$u7d$::__STATIC_FMTSTR::he0f1619a48125270", referenced from:
-                bar::foo::_$u7b$$u7b$closure$u7d$$u7d$::h038e55ceda77c203 in foo-e44b5c1f474d8218.0.o
+            "bar::foo::_$u7b$$u7b$closure$u7d$$u7d$::__STATIC_FMTSTR::h1e388498590a2043", referenced from:
+                bar::foo::_$u7b$$u7b$closure$u7d$$u7d$::h19e0a6247ba53051 in foo-509190d9c4c5257f.0.o
           ld: symbol(s) not found for architecture x86_64
           clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
@@ -32,13 +32,15 @@ To reproduce:
 $ cd foo2
 $ cargo build
    Compiling foo2 v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/foo2)
-error: internal compiler error: /Users/rustbuild/src/rust-buildbot/slave/nightly-dist-rustc-mac/build/src/librustc_trans/collector.rs:702: Cannot create local trans-item for DefId { krate: CrateNum(12), node: DefIndex(13) => bar/8f3e7d52cac9534b050285e9873672e3::foo2[0]::{{closure}}[0]::msg[0] }
+error: internal compiler error: src/librustc_trans/collector.rs:662: Cannot create local trans-item for DefId { krate: CrateNum(12), node: DefIndex(9) => bar/ab23142::foo2[0]::{{closure}}[0]::msg[0] }
 
 note: the compiler unexpectedly panicked. this is a bug.
 
 note: we would appreciate a bug report: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
 
-thread 'rustc' panicked at 'Box<Any>', /Users/rustbuild/src/rust-buildbot/slave/nightly-dist-rustc-mac/build/src/librustc_errors/lib.rs:416
+note: rustc 1.20.0-nightly (9b85e1cfa 2017-07-07) running on x86_64-apple-darwin
+
+thread 'rustc' panicked at 'Box<Any>', src/librustc_errors/lib.rs:489:8
 note: Run with `RUST_BACKTRACE=1` for a backtrace.
 
 error: Could not compile `foo2`.
