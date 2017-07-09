@@ -1,0 +1,8 @@
+[package]
+authors = ["Wim Looman <wim@nemo157.com>"]
+name = "foo2"
+version = "0.1.0"
+
+[dependencies]
+bar = { path = "../bar" }
+futures = "0.1.14"

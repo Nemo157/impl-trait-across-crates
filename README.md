@@ -5,7 +5,6 @@ To reproduce:
 ```sh
 $ cd foo
 $ cargo build
-   Compiling bar v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/bar)
    Compiling foo v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/foo)
 error: linking with `cc` failed: exit code: 1
   |
@@ -19,6 +18,30 @@ error: linking with `cc` failed: exit code: 1
 error: aborting due to previous error
 
 error: Could not compile `foo`.
+
+To learn more, run the command again with --verbose.
+```
+
+---
+
+Also, a small test case showing build failure from [rust-lang/rust#????](https://github.com/rust-lang/rust/issues/????).
+
+To reproduce:
+
+```sh
+$ cd foo2
+$ cargo build
+   Compiling foo2 v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/foo2)
+error: internal compiler error: /Users/rustbuild/src/rust-buildbot/slave/nightly-dist-rustc-mac/build/src/librustc_trans/collector.rs:702: Cannot create local trans-item for DefId { krate: CrateNum(12), node: DefIndex(13) => bar/8f3e7d52cac9534b050285e9873672e3::foo2[0]::{{closure}}[0]::msg[0] }
+
+note: the compiler unexpectedly panicked. this is a bug.
+
+note: we would appreciate a bug report: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md#bug-reports
+
+thread 'rustc' panicked at 'Box<Any>', /Users/rustbuild/src/rust-buildbot/slave/nightly-dist-rustc-mac/build/src/librustc_errors/lib.rs:416
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+
+error: Could not compile `foo2`.
 
 To learn more, run the command again with --verbose.
 ```
