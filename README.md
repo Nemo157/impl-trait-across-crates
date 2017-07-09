@@ -30,7 +30,7 @@ To reproduce:
 
 ```sh
 $ cd foo2
-$ cargo build
+$ cargo +nightly-2017-07-08 build
    Compiling foo2 v0.1.0 (file:///Users/Nemo157/sources/impl-trait-across-crates/foo2)
 error: internal compiler error: src/librustc_trans/collector.rs:662: Cannot create local trans-item for DefId { krate: CrateNum(12), node: DefIndex(9) => bar/ab23142::foo2[0]::{{closure}}[0]::msg[0] }
 
