@@ -1,4 +1,4 @@
-A small test case showing build failure from rust-lang/rust#40839.
+A small test case showing build failure from [rust-lang/rust#40839](https://github.com/rust-lang/rust/issues/40839).
 
 To reproduce:
 
