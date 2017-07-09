@@ -24,7 +24,7 @@ To learn more, run the command again with --verbose.
 
 ---
 
-Also, a small test case showing build failure from [rust-lang/rust#????](https://github.com/rust-lang/rust/issues/????).
+Also, a small test case showing build failure from [rust-lang/rust#43135](https://github.com/rust-lang/rust/issues/43135).
 
 To reproduce:
 
